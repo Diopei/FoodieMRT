@@ -16,6 +16,13 @@ a,
 }
 
 .nav{
+  margin-bottom: 10px;
+}
+
+.MRTradio{
+  display: flex;
+  justify-content: center;
+  align-items: center;
   margin-bottom: 15px;
 }
 
