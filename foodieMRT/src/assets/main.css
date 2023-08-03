@@ -18,7 +18,19 @@ a,
 .nav{
   margin-bottom: 10px;
 }
-
+.stationLine{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+  .el-radio-group{
+    gap: 5px 0;
+  }
+}
+.bl_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: blue;
+  border-color: blue;
+}
 .MRTradio{
   display: flex;
   justify-content: center;
