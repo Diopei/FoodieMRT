@@ -1,20 +1,39 @@
 <script setup lang="ts">
   import { ref,watch, } from 'vue'
   import {useCounterStore} from "@/stores/counter";
+  import TP_MRTJson from "../../public/TP_MRT.json"
+  const TP_MRT_station = TP_MRTJson.ArrayOfStationOfLine.StationOfLine
+  let Pick_station = TP_MRT_station[0].Stations.Station
   const counterStore = useCounterStore();
   const count = ref(0)
   const radio3 = ref('板南線')
   counterStore.station = radio3
 
-  const load = () => {
-    if (count.value === 15) return
-    count.value += 1
-  }
+
   watch(radio3, (newCount, oldCount) => {
     // console.log(`Count changed from ${oldCount} to ${newCount}`);
     // 在這裡可以執行你想要的操作
     counterStore.station = radio3
-    console.log(counterStore.station)
+    switch (newCount) {
+      case '板南線':
+        Pick_station = TP_MRT_station[0].Stations.Station
+        break
+      case '淡水信義線':
+        Pick_station = TP_MRT_station[4].Stations.Station
+        break
+      case '松山新店線':
+        Pick_station = TP_MRT_station[2].Stations.Station
+        break
+      case '文湖線':
+        Pick_station = TP_MRT_station[1].Stations.Station
+        break
+      case '中和新蘆線':
+        Pick_station = TP_MRT_station[3].Stations.Station
+        break
+      case '環狀線':
+        Pick_station = TP_MRT_station[5].Stations.Station
+        break
+    }
   });
 </script>
 
@@ -30,8 +49,19 @@
     </el-radio-group>
   </div>
   <div class="stationItem">
-    <ul v-infinite-scroll="load" class="infinite-list" style="overflow: auto">
-      <li v-for="i in count" :key="i" class="infinite-list-item">{{ i }}</li>
+    <ul class="infinite-list" style="overflow: auto">
+      <li v-for="i in Pick_station" :key="i.Sequence" class="infinite-list-item">
+        <div class="stationNameBlock">
+          <div class="stationID">
+            {{ i.StationID }}
+          </div>
+          <el-badge :value="12" class="item">
+            <div class="stationName">
+              {{ i.StationName.Zh_tw }}
+            </div>
+          </el-badge>
+        </div>
+      </li>
     </ul>
   </div>
 </template>

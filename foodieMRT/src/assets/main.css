@@ -27,9 +27,44 @@ a,
     gap: 5px 0;
   }
 }
+.stationNameBlock{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  .stationID{
+    padding: 0 5px 0 0;
+  }
+}
 .bl_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
-  background-color: blue;
-  border-color: blue;
+  background-color:  var(--bl_line);
+  border-color: var(--bl_line);
+  box-shadow:-1px 0 0 0 var(--bl_line);
+}
+.r_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: var(--r_line);
+  border-color: var(--r_line);
+  box-shadow:-1px 0 0 0 var(--r_line);
+}
+.g_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: var(--g_line);
+  border-color: var(--g_line);
+  box-shadow:-1px 0 0 0 var(--g_line);
+}
+.br_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: var(--br_line);
+  border-color: var(--br_line);
+  box-shadow:-1px 0 0 0 var(--br_line);
+}
+.o_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: var(--o_line);
+  border-color: var(--o_line);
+  box-shadow:-1px 0 0 0 var(--o_line);
+}
+.y_line .el-radio-button__original-radio:checked+.el-radio-button__inner{
+  background-color: var(--y_line);
+  border-color: var(--y_line);
+  color: #000;
+  box-shadow:-1px 0 0 0 var(--y_line);
 }
 .MRTradio{
   display: flex;

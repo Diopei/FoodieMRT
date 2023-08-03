@@ -18,7 +18,9 @@
   ]
   const handleClick = (item) => {
     counterStore.food = item
+    counterStore.increment()
     console.log(counterStore.food)
+    console.log(counterStore.count)
   };
 
   watch(radio1, (newCount, oldCount) => {

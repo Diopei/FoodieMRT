@@ -7,7 +7,7 @@ import StationItem from "@/components/StationItem.vue";
 <template>
   <main>
 <!--    <TheWelcome />-->
-<!--  <FoodItem />-->
+  <FoodItem />
   <StationItem />
   </main>
 </template>
