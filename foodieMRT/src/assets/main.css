@@ -15,12 +15,30 @@ a,
   transition: 0.4s;
 }
 
+.nav{
+  margin-bottom: 15px;
+}
+
+.foodSection{
+  display: grid;
+  grid-template-columns: 1fr;
+}
+.foodItem{
+  padding: 5px 15px 5px 15px;
+  border: 1px solid #000;
+  margin: 10px;
+}
+
 @media (hover: hover) {
   a:hover {
     background-color: hsla(160, 100%, 37%, 0.2);
   }
 }
-
+@media (min-width: 540px) {
+  .foodSection{
+    grid-template-columns: 1fr 1fr;
+  }
+}
 @media (min-width: 1024px) {
   body {
     display: flex;
@@ -31,5 +49,9 @@ a,
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding: 0 2rem;
+  }
+
+  .foodSection{
+    grid-template-columns: 1fr 1fr 1fr;
   }
 }
